@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Otium — make social media social again</title>
+<meta name="description" content="One quest a day. Get outside, do it with friends, post the proof. Sign up for the Berkeley beta.">
+
+<meta property="og:title" content="Otium">
+<meta property="og:description" content="Make social media social again.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://otium.quest">
+<meta name="theme-color" content="#003262">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23003262'/><circle cx='50' cy='50' r='30' pathLength='100' fill='none' stroke='%23F7F5F0' stroke-width='12' stroke-linecap='round' stroke-dasharray='3 11.28'/></svg>">
+
+<style>
+  @font-face {
+    font-family: "Fanwood Text";
+    src: url("fonts/FanwoodText-Regular.ttf") format("truetype");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Fanwood Text";
+    src: url("fonts/FanwoodText-Italic.ttf") format("truetype");
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+
+  /* Commits to one look on purpose — Berkeley Blue ground, cream type. */
+  :root {
+    --blue:  #003262;
+    --cream: #F7F5F0;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--blue); }
+  body {
+    margin: 0;
+    background: var(--blue);
+    color: var(--cream);
+    font-family: "Fanwood Text", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  main {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: clamp(3.5rem, 11vw, 7rem) 1.25rem clamp(3rem, 8vw, 5rem);
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: clamp(3.2rem, 14vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.35rem;
+  }
+  p {
+    font-style: italic;
+    font-size: clamp(1.1rem, 4vw, 1.45rem);
+    opacity: 0.78;
+    margin: 0 0 clamp(2.5rem, 7vw, 3.5rem);
+  }
+
+  .form-shell {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 18px 48px -24px rgba(0, 0, 0, 0.55);
+  }
+  /* Google Forms is cross-origin, so it can't report its own height — these are
+     measured. Narrow viewports need MORE height, not less: the fields wrap and the
+     form grows taller as the frame gets narrower. */
+  iframe {
+    display: block;
+    width: 100%;
+    height: 1400px;   /* phones — fields stacked, labels wrapping */
+    border: 0;
+  }
+  @media (min-width: 560px) {
+    iframe { height: 1120px; }   /* desktop — the form sets its full width */
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    h1, p, .form-shell { animation: rise 0.6s ease both; }
+    p { animation-delay: 0.07s; }
+    .form-shell { animation-delay: 0.14s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Otium</h1>
+  <p>Make social media social again.</p>
+
+  <div class="form-shell">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSf5-WRIJY-rfWteW4Wj7hg0t9A5lRNY0Xf91tk_vHxww5x2fA/viewform?embedded=true"
+      title="Otium beta signup"
+      loading="lazy"></iframe>
+  </div>
+</main>
+</body>
+</html>
